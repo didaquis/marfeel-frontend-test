@@ -1,0 +1,120 @@
+@charset 'utf-8';
+
+@import '_reset';
+@import '_fonts';
+@import '_colors';
+@import '_sizes';
+@import '_mixins';
+
+html {
+	font-size: 16px;
+	font-family: 'Noto Sans', 'Open Sans', sans-serif;
+}
+
+body {
+	background-color: $body-color;
+}
+
+main {
+	background-color: $panel-background;
+	width: $panel-max-width;
+	padding: $size-medium * 2;
+	margin: $size-medium * 2 auto;
+	border-radius: $b-radius * 2;
+	box-shadow: 1px 1px 8px 0 $main-box-shadow;
+}
+
+.search-box {
+	margin: 0 auto;
+	text-align: center;
+	
+	input {
+		padding: $size-medium / 2 $size-medium;
+		font-size: $f-size-reduced;
+		width: 240px;
+	}
+	
+	button {
+		font-weight: bold;
+		font-size: $f-size-reduced;
+		padding: $size-medium / 2 $size-medium;
+		margin: 0 0 0 10px;
+		border-radius: $b-radius;
+		background-color: $button-brg;
+		border-color: $button-b;
+		border-width: 1px;
+		border-style: solid;
+
+		&:hover {
+			background-color: darken($button-brg,4%);
+		}
+	}
+}
+
+.no-res {
+	margin: $size-medium * 2 auto 0;
+	@include mainTransition();
+
+	.alert-box {
+		background-color: $alert-box-brg;
+		color: $alert-box-text;
+		margin: 10px auto;
+		border: 1px solid darken($alert-box-brg,15%);
+		border-radius: $b-radius; 
+		padding: $size-medium;
+		font-size: $f-size-reduced;
+	}
+}
+
+.user-box {
+	margin: $size-medium * 2 auto;
+	@include mainTransition();
+
+	.avatar {
+		width: $avatar-size;
+		height: $avatar-size;
+		float: left;
+    	margin-right: $size-medium;
+	}
+
+	.nickName {
+		color: $secondary-text;
+		font-style: italic;
+		font-size: $f-size-reduced;
+	}
+
+	.fullName {
+		margin-bottom: 6px;
+	}
+
+	.bio {
+		font-size: $f-size-reduced;
+	}
+}
+
+.repos-box {
+	max-height: $repos-max-height;
+    width: 100%;
+	overflow: hidden;
+	@include mainTransition();
+
+	table  {
+		width: 100%;
+	}
+
+	table tr td {
+		padding: $size-medium / 2 0;
+	}
+
+	table tr td:nth-child(2) {
+		text-align: right;
+	}
+
+	table tr:first-child td {
+		border-bottom: 2px solid black;
+	}
+
+	table tr td {
+		border-bottom: 1px solid $table-b-secondary;
+	}
+}

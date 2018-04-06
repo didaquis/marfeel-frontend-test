@@ -1,0 +1,25 @@
+{
+  "name": "marfeel-frontend-test",
+  "version": "1.0.0",
+  "description": "Marfeel frontend test, 2018",
+  "main": "",
+  "scripts": {
+    "develop": "http-server public/",
+    "test": "echo Running test in browser. File: test/SpecRunner.html && open test/SpecRunner.html",
+    "build_css": "sass src/scss/main.scss public/styles/main.css --style compressed --sourcemap=none",
+    "minify_js": "minify src/js/GitHubApiClient.js --out-file public/scripts/GitHubApiClient.min.js --mangle.keepClassName && minify src/js/main.js --out-file public/scripts/main.min.js --mangle.keepClassName",
+    "deploy": "git subtree push --prefix public origin gh-pages"
+  },
+  "keywords": [
+    "Marfeel",
+    "test",
+    "frontend"
+  ],
+  "author": "Dídac García",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-minify": "^0.3.0",
+    "http-server": "^0.11.1"
+  }
+}
